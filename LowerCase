@@ -1,0 +1,70 @@
+#################################################################
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##       This Python scripts accomplishes the following:       ##
+##            (1) Ask User if they like Python                 ##
+##            (2) Convert answer to uppercase and lowercase    ##
+##            (3) Check to see if the answer is "yes" or "no"  ##
+##            (4) If the answer is neither the user is asked   ##
+##                to re-enter until they get it right          ##
+##            (5) Display appropriate message based on answer  ##
+##       This script contains 2 Functions:                     ##
+##            (1) askuser() - Asks for answer from User        ##
+##            (2) Caseconv() - Takes answer from user and      ##
+##                converts it to uppercase and lowercase.  It  ##
+##                also checks to see if answer is yes or no    ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+#################################################################
+
+##  This is the first function that asks user the question and 
+##  returns the value
+def askuser():
+       pyanswer = input("Do you like Python? ")
+       return pyanswer
+pyanswer = askuser()
+## This is the second function that takes the answer and converts
+## it to uppercase and lowercase
+def Caseconv():
+       upyanswer = pyanswer.upper()
+       lowerr = pyanswer.lower()
+##  If the lowerr case answer is yes or no, it sets
+##  answerr to "true";  otherwise, answer is set to "false"
+       if lowerr == "no":
+              answerr = "true"
+       elif lowerr == "yes":
+              answerr = "true"
+       else:
+              answerr = "false"
+##  It now returns the uppercase, lowercase and answer value
+##  in 1 array.
+       return upyanswer,lowerr,answerr
+##  From the return arrary, answerr is the third value
+answerr = Caseconv()[2]
+##  As long as the user is entering an incorrect answer, this
+##  while statement will continue to prompt the user
+while answerr == "false":
+       print ("You MUST enter ""Yes"" or ""No""")
+       pyanswer = askuser()
+##  It takes the answer reentered by user and checks to see if
+##  it is true or false
+       answerr = Caseconv()[2]
+##  Once the correct answer is received, the next 2 statements
+##  will extract the lower- and upper- case values from
+##  the Caseconv function.  Lower- is the 1st value and Upper
+##  is the 2nd value.
+lowerr = Caseconv()[1]
+upyanswer = Caseconv()[0]
+##  This is the output display the user will see if they said Yes
+if lowerr == "yes":
+       print ("You entered ",upyanswer,'!',sep='')
+       print ("It is great that you like Python!! I like it toooooooo")
+##  This is the output display the user will see if they said no
+elif lowerr == "no":
+       print ("You entered ",upyanswer,'!!!!',sep='')
+       print ("WHY NOT!?!? I like it very very much!!")
