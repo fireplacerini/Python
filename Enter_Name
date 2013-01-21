@@ -1,0 +1,39 @@
+#################################################################
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##       This Python scripts accomplishes the following:       ##
+##            (1) Ask user to input their name                 ##
+##            (2) If the name entered is less than 1 character ##
+##                Long, it prompts the user to renter (looped) ##
+##            (3) Once the correct name is entered, the name   ##
+##                is displayed on the screen ten times with    ##
+##                an exclamation after each time               ##
+##            (4) Displays a face after the name               ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+##                                                             ##
+#################################################################
+a = "\\"
+b = " | "
+c = "/"
+d = "@"
+e = "*"
+f = '"""'
+name = input("What is your name: ")
+namelen = len(name)
+nameint = namelen + 1
+while namelen == 0:
+       name=input("Incorrect entry, What is your name: ")
+       namelen=len(name)
+name = (name+"! ")*10 
+print (name)
+print ("\t",a,b,c)
+print ("\t"," ",d,d)
+print ("\t","  ",e)
+print ("\t",a,f,c)
